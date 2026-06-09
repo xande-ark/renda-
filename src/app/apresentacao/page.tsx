@@ -25,10 +25,10 @@ export default function PresentationPage() {
       content: (
         <>
           <p className="mb-4">
-            "Olá a todos. Olhem para o lado. Quantas pessoas vocês conhecem hoje que precisam de uma renda extra imediata, ou que trabalham de forma autônoma e sofrem para encontrar clientes e, pior, sofrem com o medo constante de levar um calote no final do dia? Do outro lado, quantas vezes você precisou de uma faxina de última hora, um eletricista ou um passeador de cães e não sabia em quem confiar?
+            &quot;Olá a todos. Olhem para o lado. Quantas pessoas vocês conhecem hoje que precisam de uma renda extra imediata, ou que trabalham de forma autônoma e sofrem para encontrar clientes e, pior, sofrem com o medo constante de levar um calote no final do dia? Do outro lado, quantas vezes você precisou de uma faxina de última hora, um eletricista ou um passeador de cães e não sabia em quem confiar?
           </p>
           <p>
-            Para resolver esse gargalo do mercado informal, nós criamos o <strong>Renda+</strong>. Nós não somos um LinkedIn e nem um mural de anúncios poluído como o Facebook. Nós somos um ecossistema de contratação instantânea focado em três pilares: <strong>Disponibilidade, Localização e Reputação</strong>. Vou passar a palavra para o nosso CTO, que vai explicar como transformamos essa dor em uma plataforma funcional."
+            Para resolver esse gargalo do mercado informal, nós criamos o <strong>Renda+</strong>. Nós não somos um LinkedIn e nem um mural de anúncios poluído como o Facebook. Nós somos um ecossistema de contratação instantânea focado em três pilares: <strong>Disponibilidade, Localização e Reputação</strong>. Vou passar a palavra para o nosso CTO, que vai explicar como transformamos essa dor em uma plataforma funcional.&quot;
           </p>
         </>
       )
@@ -41,13 +41,13 @@ export default function PresentationPage() {
       content: (
         <>
           <p className="mb-4">
-            "Obrigado. O core do Renda+ foi desenhado para mitigar a carga cognitiva e a barreira digital. Nós operamos como um Marketplace Bilateral Sob Demanda. Na nossa plataforma, eliminamos currículos longos e focamos no que importa.
+            &quot;Obrigado. O core do Renda+ foi desenhado para mitigar a carga cognitiva e a barreira digital. Nós operamos como um Marketplace Bilateral Sob Demanda. Na nossa plataforma, eliminamos currículos longos e focamos no que importa.
           </p>
           <p className="mb-4">
-            Para o <strong>Demand-Side</strong>, ou seja, o cliente que contrata, a experiência é visual e direta. Ao acessar nossa aplicação, ele se depara com macrocategorias claras: faxina, jardinagem e pequenos reparos. Através de ferramentas de Geofencing, o app calcula a proximidade exata e oferece um 'Clique Único' de solicitação baseado em preço transparente e avaliação.
+            Para o <strong>Demand-Side</strong>, ou seja, o cliente que contrata, a experiência é visual e direta. Ao acessar nossa aplicação, ele se depara com macrocategorias claras: faxina, jardinagem e pequenos reparos. Através de ferramentas de Geofencing, o app calcula a proximidade exata e oferece um &apos;Clique Único&apos; de solicitação baseado em preço transparente e avaliação.
           </p>
           <p>
-            Já para o <strong>Supply-Side</strong>, o prestador de serviço, nosso foco foi a inclusão digital. Sabemos que muitos profissionais têm aparelhos antigos ou dificuldades com textos longos. Por isso, a interface é limpa, permite descrições em áudio e oferece um painel de vagas em tempo real na região dele. Ele aceita o serviço com um toque. Mas para um marketplace funcionar, precisamos entender o mercado, e passo a palavra para nossa diretoria estratégica."
+            Já para o <strong>Supply-Side</strong>, o prestador de serviço, nosso foco foi a inclusão digital. Sabemos que muitos profissionais têm aparelhos antigos ou dificuldades com textos longos. Por isso, a interface é limpa, permite descrições em áudio e oferece um painel de vagas em tempo real na região dele. Ele aceita o serviço com um toque. Mas para um marketplace funcionar, precisamos entender o mercado, e passo a palavra para nossa diretoria estratégica.&quot;
           </p>
         </>
       )
@@ -60,13 +60,13 @@ export default function PresentationPage() {
       content: (
         <>
           <p className="mb-4">
-            "Analisando o cenário competitivo do Renda+, mapeamos nossas forças e fraquezas de forma realista. Nossa maior <strong>Força</strong> é a baixíssima barreira de entrada e o apelo hiperlocal, reduzindo o custo de transporte do trabalhador. Na vertente externa, vemos uma <strong>Oportunidade</strong> gigantesca no crescimento da Gig Economy e no forte apelo social do projeto para investidores focados em ESG.
+            &quot;Analisando o cenário competitivo do Renda+, mapeamos nossas forças e fraquezas de forma realista. Nossa maior <strong>Força</strong> é a baixíssima barreira de entrada e o apelo hiperlocal, reduzindo o custo de transporte do trabalhador. Na vertente externa, vemos uma <strong>Oportunidade</strong> gigantesca no crescimento da Gig Economy e no forte apelo social do projeto para investidores focados em ESG.
           </p>
           <p className="mb-4">
-            Contudo, não ignoramos nossas <strong>Fraquezas</strong>. Como qualquer marketplace bilateral, dependemos do 'Efeito de Rede': precisamos de volume de ambos os lados para o app fazer sentido. Além disso, enfrentamos a <strong>Ameaça</strong> crônica da desintermediação, que é quando o cliente e o prestador 'pulam' o app no segundo atendimento para não pagar taxas.
+            Contudo, não ignoramos nossas <strong>Fraquezas</strong>. Como qualquer marketplace bilateral, dependemos do &apos;Efeito de Rede&apos;: precisamos de volume de ambos os lados para o app fazer sentido. Além disso, enfrentamos a <strong>Ameaça</strong> crônica da desintermediação, que é quando o cliente e o prestador &apos;pulam&apos; o app no segundo atendimento para não pagar taxas.
           </p>
           <p>
-            Nossa estratégia de monetização com taxas justas (Take Rate) e assinaturas premium baratas só se sustenta porque resolvemos o maior medo desse mercado: a segurança. E é sobre isso que nosso Diretor de Operações vai falar agora."
+            Nossa estratégia de monetização com taxas justas (Take Rate) e assinaturas premium baratas só se sustenta porque resolvemos o maior medo desse mercado: a segurança. E é sobre isso que nosso Diretor de Operações vai falar agora.&quot;
           </p>
         </>
       )
@@ -79,16 +79,16 @@ export default function PresentationPage() {
       content: (
         <>
           <p className="mb-4">
-            "Exatamente. O que impede a desintermediação e atrai o usuário é a nossa robusta Gestão de Riscos e Segurança, dividida em três camadas.
+            &quot;Exatamente. O que impede a desintermediação e atrai o usuário é a nossa robusta Gestão de Riscos e Segurança, dividida em três camadas.
           </p>
           <p className="mb-4">
-            Na <strong>Prevenção</strong>, aplicamos o 'Liveness Check' com biometria facial e background check automatizado de antecedentes criminais. No <strong>Monitoramento</strong>, o app age como uma testemunha digital: o serviço só começa quando o prestador insere um token numérico gerado pelo cliente, e contamos com rastreamento de rota e um botão de pânico SOS silencioso.
+            Na <strong>Prevenção</strong>, aplicamos o &apos;Liveness Check&apos; com biometria facial e background check automatizado de antecedentes criminais. No <strong>Monitoramento</strong>, o app age como uma testemunha digital: o serviço só começa quando o prestador insere um token numérico gerado pelo cliente, e contamos com rastreamento de rota e um botão de pânico SOS silencioso.
           </p>
           <p className="mb-4">
-            Por fim, no <strong>pós-serviço</strong>, garantimos um fundo de microseguro contra danos materiais e a retenção segura do dinheiro na carteira digital, liberado só após o 'Ok' do cliente. Isso zera o calote.
+            Por fim, no <strong>pós-serviço</strong>, garantimos um fundo de microseguro contra danos materiais e a retenção segura do dinheiro na carteira digital, liberado só após o &apos;Ok&apos; do cliente. Isso zera o calote.
           </p>
           <p>
-            Tudo isso se conecta fortemente com o nosso quarto tópico: <strong>Nossos Valores</strong>. O Renda+ é regido pelo framework ESG. Promovemos a dignidade social equilibrando a balança com a avaliação bilateral — onde o prestador também avalia o cliente. Garantimos governança com auditoria humana contra banimentos injustos e defendemos a sustentabilidade ambiental através da hiperlocalidade, diminuindo grandes deslocamentos urbanos. Devolvo a palavra para nosso CEO."
+            Tudo isso se conecta fortemente com o nosso quarto tópico: <strong>Nossos Valores</strong>. O Renda+ é regido pelo framework ESG. Promovemos a dignidade social equilibrando a balança com a avaliação bilateral — onde o prestador também avalia o cliente. Garantimos governança com auditoria humana contra banimentos injustos e defendemos a sustentabilidade ambiental através da hiperlocalidade, diminuindo grandes deslocamentos urbanos. Devolvo a palavra para nosso CEO.&quot;
           </p>
         </>
       )
@@ -101,10 +101,10 @@ export default function PresentationPage() {
       content: (
         <>
           <p className="mb-4">
-            "Para fechar, o Renda+ não é só tecnologia; é impacto social escalável e sustentável. Nosso MVP já está online e estruturado para validar essas interações. Estamos prontos para transformar a informalidade em um ecossistema seguro, digno e lucrativo para todas as pontas.
+            &quot;Para fechar, o Renda+ não é só tecnologia; é impacto social escalável e sustentável. Nosso MVP já está online e estruturado para validar essas interações. Estamos prontos para transformar a informalidade em um ecossistema seguro, digno e lucrativo para todas as pontas.
           </p>
           <p>
-            Convidamos todos vocês a acessarem nossa plataforma e conhecerem o futuro do trabalho autônomo local. Obrigado!"
+            Convidamos todos vocês a acessarem nossa plataforma e conhecerem o futuro do trabalho autônomo local. Obrigado!&quot;
           </p>
         </>
       )
