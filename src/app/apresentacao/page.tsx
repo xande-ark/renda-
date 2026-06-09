@@ -25,15 +25,14 @@ export default function PresentationPage() {
     {
       id: "abertura",
       title: "Abertura e Introdução",
-      speaker: "Pessoa 1 (CEO)",
       image: "/images/apresentacao/slide_abertura_1781017598729.png",
       content: (
         <>
           <p className="mb-4">
-            &quot;Olá a todos. Olhem para o lado. Quantas pessoas vocês conhecem hoje que precisam de uma renda extra imediata, ou que trabalham de forma autônoma e sofrem para encontrar clientes e, pior, sofrem com o medo constante de levar um calote no final do dia? Do outro lado, quantas vezes você precisou de uma faxina de última hora, um eletricista ou um passeador de cães e não sabia em quem confiar?
+            &quot;Quantas pessoas vocês conhecem hoje que precisam de uma renda extra imediata, ou que trabalham de forma autônoma e sofrem para encontrar clientes e, pior, sofrem com o medo constante de levar um calote no final do dia? Do outro lado, quantas vezes você precisou de uma faxina de última hora, um eletricista ou um passeador de cães e não sabia em quem confiar?
           </p>
           <p>
-            Para resolver esse gargalo do mercado informal, nós criamos o <strong>Renda+</strong>. Nós não somos um LinkedIn e nem um mural de anúncios poluído como o Facebook. Nós somos um ecossistema de contratação instantânea focado em três pilares: <strong>Disponibilidade, Localização e Reputação</strong>. Vou passar a palavra para o nosso CTO, que vai explicar como transformamos essa dor em uma plataforma funcional.&quot;
+            Para resolver esse gargalo do mercado informal, nós criamos o <strong>Renda+</strong>. Nós não somos um LinkedIn e nem um mural de anúncios poluído como o Facebook. Nós somos um ecossistema de contratação instantânea focado em três pilares: <strong>Disponibilidade, Localização e Reputação</strong>.&quot;
           </p>
         </>
       )
@@ -41,18 +40,17 @@ export default function PresentationPage() {
     {
       id: "arquitetura",
       title: "Arquitetura da Plataforma",
-      speaker: "Pessoa 2 (CTO)",
       image: "/images/apresentacao/slide_arquitetura_1781017610130.png",
       content: (
         <>
           <p className="mb-4">
-            &quot;Obrigado. O core do Renda+ foi desenhado para mitigar a carga cognitiva e a barreira digital. Nós operamos como um Marketplace Bilateral Sob Demanda. Na nossa plataforma, eliminamos currículos longos e focamos no que importa.
+            &quot;O core do Renda+ foi desenhado para mitigar a carga cognitiva e a barreira digital. Nós operamos como um Marketplace Bilateral Sob Demanda. Na nossa plataforma, eliminamos currículos longos e focamos no que importa.
           </p>
           <p className="mb-4">
             Para o <strong>Demand-Side</strong>, ou seja, o cliente que contrata, a experiência é visual e direta. Ao acessar nossa aplicação, ele se depara com macrocategorias claras: faxina, jardinagem e pequenos reparos. Através de ferramentas de Geofencing, o app calcula a proximidade exata e oferece um &apos;Clique Único&apos; de solicitação baseado em preço transparente e avaliação.
           </p>
           <p>
-            Já para o <strong>Supply-Side</strong>, o prestador de serviço, nosso foco foi a inclusão digital. Sabemos que muitos profissionais têm aparelhos antigos ou dificuldades com textos longos. Por isso, a interface é limpa, permite descrições em áudio e oferece um painel de vagas em tempo real na região dele. Ele aceita o serviço com um toque. Mas para um marketplace funcionar, precisamos entender o mercado, e passo a palavra para nossa diretoria estratégica.&quot;
+            Já para o <strong>Supply-Side</strong>, o prestador de serviço, nosso foco foi a inclusão digital. Sabemos que muitos profissionais têm aparelhos antigos ou dificuldades com textos longos. Por isso, a interface é limpa, permite descrições em áudio e oferece um painel de vagas em tempo real na região dele. Ele aceita o serviço com um toque.&quot;
           </p>
         </>
       )
@@ -60,7 +58,6 @@ export default function PresentationPage() {
     {
       id: "swot",
       title: "Análise Estratégica SWOT",
-      speaker: "Pessoa 3 (CFO/CMO)",
       image: "/images/apresentacao/slide_swot_1781017621987.png",
       content: (
         <>
@@ -71,7 +68,7 @@ export default function PresentationPage() {
             Contudo, não ignoramos nossas <strong>Fraquezas</strong>. Como qualquer marketplace bilateral, dependemos do &apos;Efeito de Rede&apos;: precisamos de volume de ambos os lados para o app fazer sentido. Além disso, enfrentamos a <strong>Ameaça</strong> crônica da desintermediação, que é quando o cliente e o prestador &apos;pulam&apos; o app no segundo atendimento para não pagar taxas.
           </p>
           <p>
-            Nossa estratégia de monetização com taxas justas (Take Rate) e assinaturas premium baratas só se sustenta porque resolvemos o maior medo desse mercado: a segurança. E é sobre isso que nosso Diretor de Operações vai falar agora.&quot;
+            Nossa estratégia de monetização com taxas justas (Take Rate) e assinaturas premium baratas só se sustenta porque resolvemos o maior medo desse mercado: a segurança.&quot;
           </p>
         </>
       )
@@ -79,12 +76,11 @@ export default function PresentationPage() {
     {
       id: "seguranca",
       title: "Segurança e Valores",
-      speaker: "Pessoa 4 (COO)",
       image: "/images/apresentacao/slide_seguranca_1781017635043.png",
       content: (
         <>
           <p className="mb-4">
-            &quot;Exatamente. O que impede a desintermediação e atrai o usuário é a nossa robusta Gestão de Riscos e Segurança, dividida em três camadas.
+            &quot;O que impede a desintermediação e atrai o usuário é a nossa robusta Gestão de Riscos e Segurança, dividida em três camadas.
           </p>
           <p className="mb-4">
             Na <strong>Prevenção</strong>, aplicamos o &apos;Liveness Check&apos; com biometria facial e background check automatizado de antecedentes criminais. No <strong>Monitoramento</strong>, o app age como uma testemunha digital: o serviço só começa quando o prestador insere um token numérico gerado pelo cliente, e contamos com rastreamento de rota e um botão de pânico SOS silencioso.
@@ -93,7 +89,7 @@ export default function PresentationPage() {
             Por fim, no <strong>pós-serviço</strong>, garantimos um fundo de microseguro contra danos materiais e a retenção segura do dinheiro na carteira digital, liberado só após o &apos;Ok&apos; do cliente. Isso zera o calote.
           </p>
           <p>
-            Tudo isso se conecta fortemente com o nosso quarto tópico: <strong>Nossos Valores</strong>. O Renda+ é regido pelo framework ESG. Promovemos a dignidade social equilibrando a balança com a avaliação bilateral — onde o prestador também avalia o cliente. Garantimos governança com auditoria humana contra banimentos injustos e defendemos a sustentabilidade ambiental através da hiperlocalidade, diminuindo grandes deslocamentos urbanos. Devolvo a palavra para nosso CEO.&quot;
+            Tudo isso se conecta fortemente com o nosso quarto tópico: <strong>Nossos Valores</strong>. O Renda+ é regido pelo framework ESG. Promovemos a dignidade social equilibrando a balança com a avaliação bilateral — onde o prestador também avalia o cliente. Garantimos governança com auditoria humana contra banimentos injustos e defendemos a sustentabilidade ambiental através da hiperlocalidade, diminuindo grandes deslocamentos urbanos.&quot;
           </p>
         </>
       )
@@ -101,7 +97,6 @@ export default function PresentationPage() {
     {
       id: "encerramento",
       title: "Encerramento",
-      speaker: "Pessoa 1 (CEO)",
       image: "/images/apresentacao/slide_encerramento_1781017647067.png",
       content: (
         <>
@@ -109,7 +104,7 @@ export default function PresentationPage() {
             &quot;Para fechar, o Renda+ não é só tecnologia; é impacto social escalável e sustentável. Nosso MVP já está online e estruturado para validar essas interações. Estamos prontos para transformar a informalidade em um ecossistema seguro, digno e lucrativo para todas as pontas.
           </p>
           <p>
-            Convidamos todos vocês a acessarem nossa plataforma e conhecerem o futuro do trabalho autônomo local. Obrigado!&quot;
+            Convidamos todos vocês a acessarem nossa plataforma e conhecerem o futuro do trabalho autônomo local.&quot;
           </p>
         </>
       )
@@ -191,16 +186,7 @@ export default function PresentationPage() {
                   </h2>
               </div>
               
-              <div data-aos="fade-left" data-aos-delay="200" className="flex items-center gap-3 xl:gap-4 text-blue-700 font-bold text-base md:text-lg xl:text-xl mb-6 xl:mb-8 border-b border-blue-100 pb-4 xl:pb-6">
-                <span className="bg-blue-600 text-white p-2 xl:p-2.5 rounded-full shadow-md">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 xl:h-6 xl:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                  </svg>
-                </span>
-                {slide.speaker}
-              </div>
-              
-              <div data-aos="fade-up" data-aos-delay="300" className="prose prose-base lg:prose-lg xl:prose-xl text-slate-600 leading-relaxed italic border-l-4 border-blue-500 pl-4 md:pl-6 xl:pl-8 bg-white p-6 xl:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+              <div data-aos="fade-up" data-aos-delay="200" className="prose prose-base lg:prose-lg xl:prose-xl text-slate-600 leading-relaxed border-l-4 border-blue-500 pl-4 md:pl-6 xl:pl-8 bg-white p-6 xl:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow mt-6">
                 {slide.content}
               </div>
 
