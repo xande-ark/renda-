@@ -263,10 +263,12 @@ export default function Dashboard() {
                         <p className="text-slate-500 text-sm mb-6 flex items-center gap-1">
                           <i className="ph-fill ph-star text-brand-yellow"></i> 5.0 (Novato)
                         </p>
-                        <Link href={`/chat/${provider.id}`} className="w-full flex items-center justify-center gap-2 bg-brand-blue hover:bg-brand-dark text-white py-2.5 rounded-xl font-bold transition-colors shadow-glow-blue">
-                          <i className="ph ph-chat-circle-text text-lg"></i>
-                          Contactar
-                        </Link>
+                        <div className="mt-6 pt-4 border-t border-slate-100 flex flex-col gap-2">
+                          <Link href={`/provider/${provider.id}`} className="w-full flex items-center justify-center gap-2 bg-brand-blue hover:bg-brand-dark text-white py-2.5 rounded-xl font-bold transition-colors shadow-glow-blue">
+                            <i className="ph ph-user text-lg"></i>
+                            Ver Perfil
+                          </Link>
+                        </div>
                       </div>
                     ))
                   )}
