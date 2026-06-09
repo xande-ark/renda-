@@ -8,12 +8,17 @@ import 'aos/dist/aos.css';
 
 export default function PresentationPage() {
   useEffect(() => {
-    AOS.init({
-      once: false,
-      offset: 100,
-      duration: 1500,
-      easing: "ease-in-out-sine",
-    });
+    // Dá um tempinho extra para garantir que a página montou antes do AOS calcular as posições
+    setTimeout(() => {
+      AOS.init({
+        once: false, // Permite que a animação repita ao rolar para cima e para baixo
+        offset: 50,
+        duration: 1200,
+        easing: "ease-in-out-sine",
+      });
+      // Força a atualização do AOS após o carregamento inicial das imagens
+      AOS.refresh();
+    }, 100);
   }, []);
 
   const slides = [
@@ -112,11 +117,11 @@ export default function PresentationPage() {
   ];
 
   return (
-    <div className="h-[100dvh] w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth bg-slate-900 text-slate-100 relative">
+    <div className="w-full bg-slate-900 text-slate-100 relative overflow-x-hidden">
       
       {/* Botão Voltar Fixo para garantir que sempre fique visível na área segura */}
       <div className="fixed top-4 left-4 md:top-8 md:left-8 z-50">
-          <Link href="/" className="inline-flex items-center gap-2 bg-slate-900/40 hover:bg-slate-900/60 backdrop-blur-md text-white px-4 py-2 md:px-5 md:py-2.5 rounded-full text-sm md:text-base font-bold transition-all shadow-lg border border-white/10" data-aos="fade-down" data-aos-delay="200">
+          <Link href="/" className="inline-flex items-center gap-2 bg-slate-900/60 hover:bg-slate-900/80 backdrop-blur-md text-white px-4 py-2 md:px-5 md:py-2.5 rounded-full text-sm md:text-base font-bold transition-all shadow-lg border border-white/10" data-aos="fade-down" data-aos-delay="200">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
@@ -125,7 +130,7 @@ export default function PresentationPage() {
       </div>
 
       {/* Intro Slide */}
-      <section className="h-[100dvh] w-full snap-start flex flex-col justify-center items-center text-center px-6 relative hero-bg overflow-hidden py-20">
+      <section className="min-h-[100dvh] w-full flex flex-col justify-center items-center text-center px-6 relative hero-bg overflow-hidden py-20">
         
         {/* Animated Background Elements */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-400/20 rounded-full blur-[100px] pointer-events-none" data-aos="zoom-in" data-aos-duration="2000"></div>
@@ -142,7 +147,7 @@ export default function PresentationPage() {
             Conheça a plataforma que está revolucionando o futuro do trabalho autônomo local.
           </p>
           <div data-aos="fade-up" data-aos-delay="600" className="mt-16 animate-bounce opacity-80 flex flex-col items-center">
-            <p className="mb-3 font-semibold uppercase tracking-widest text-xs md:text-sm text-yellow-300">Deslize para iniciar</p>
+            <p className="mb-3 font-semibold uppercase tracking-widest text-xs md:text-sm text-yellow-300">Role para baixo</p>
             <div className="w-8 h-12 md:w-10 md:h-14 border-2 border-white/50 rounded-full flex justify-center p-2">
               <div className="w-1 h-2 md:h-3 bg-yellow-400 rounded-full animate-pulse"></div>
             </div>
@@ -152,18 +157,18 @@ export default function PresentationPage() {
 
       {/* Content Slides */}
       {slides.map((slide, index) => (
-        <section key={slide.id} className="h-[100dvh] w-full snap-start flex flex-col lg:flex-row relative bg-white overflow-hidden">
+        <section key={slide.id} className="min-h-[100dvh] w-full flex flex-col lg:flex-row relative bg-white overflow-hidden shadow-2xl border-b border-slate-200">
           
           {/* Mobile Overlay Title */}
           <div className="absolute top-0 left-0 w-full pt-16 pb-6 px-6 bg-gradient-to-b from-black/80 via-black/50 to-transparent z-20 lg:hidden pointer-events-none">
             <div data-aos="fade-down">
-              <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-[10px] font-bold mb-2 inline-block uppercase tracking-wider">Tópico {index + 1}</span>
-              <h2 className="text-xl font-bold text-white drop-shadow-md leading-tight">{slide.title}</h2>
+              <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-[10px] font-bold mb-2 inline-block uppercase tracking-wider shadow-md">Tópico {index + 1}</span>
+              <h2 className="text-2xl font-black text-white drop-shadow-md leading-tight">{slide.title}</h2>
             </div>
           </div>
 
-          {/* Image Side */}
-          <div className="w-full h-[40dvh] lg:h-[100dvh] lg:w-1/2 relative bg-slate-100 flex-shrink-0">
+          {/* Image Side - Now Wrapped in a div for AOS */}
+          <div className="w-full h-[40dvh] lg:h-auto lg:min-h-[100dvh] lg:w-1/2 relative bg-slate-200 flex-shrink-0" data-aos="fade-right" data-aos-duration="1200">
              <Image 
                 src={slide.image} 
                 alt={slide.title}
@@ -171,13 +176,11 @@ export default function PresentationPage() {
                 className="object-cover"
                 priority={index === 0}
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                data-aos="fade-right"
-                data-aos-duration="1000"
               />
           </div>
           
           {/* Content Side */}
-          <div className="w-full h-[60dvh] lg:h-[100dvh] lg:w-1/2 flex flex-col p-6 pb-20 md:p-12 lg:p-24 overflow-y-auto bg-slate-50 relative">
+          <div className="w-full lg:w-1/2 flex flex-col justify-center p-6 pb-16 md:p-12 lg:p-24 bg-slate-50 relative lg:min-h-[100dvh]">
               
               <div className="hidden lg:block mb-8 xl:mb-10" data-aos="fade-left" data-aos-delay="100">
                   <span className="bg-blue-100 text-blue-800 px-5 py-2 rounded-full text-xs xl:text-sm font-black tracking-widest uppercase shadow-sm">
@@ -197,12 +200,12 @@ export default function PresentationPage() {
                 {slide.speaker}
               </div>
               
-              <div data-aos="fade-up" data-aos-delay="300" className="prose prose-base lg:prose-lg xl:prose-xl text-slate-600 leading-relaxed italic border-l-4 border-blue-500 pl-4 md:pl-6 xl:pl-8 bg-white/50 p-4 xl:p-6 rounded-r-2xl shadow-sm overflow-visible">
+              <div data-aos="fade-up" data-aos-delay="300" className="prose prose-base lg:prose-lg xl:prose-xl text-slate-600 leading-relaxed italic border-l-4 border-blue-500 pl-4 md:pl-6 xl:pl-8 bg-white p-6 xl:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
                 {slide.content}
               </div>
 
               {/* Progress Indicator */}
-              <div className="absolute bottom-4 right-6 lg:bottom-8 lg:right-8 text-slate-300 font-bold text-lg lg:text-xl pointer-events-none">
+              <div className="mt-12 text-slate-300 font-black text-xl lg:text-2xl text-right">
                 {index + 1} / {slides.length}
               </div>
           </div>
@@ -210,7 +213,7 @@ export default function PresentationPage() {
       ))}
 
       {/* CTA Slide */}
-      <section className="h-[100dvh] w-full snap-start flex flex-col justify-center items-center text-center px-6 hero-bg relative overflow-hidden py-20">
+      <section className="min-h-[100dvh] w-full flex flex-col justify-center items-center text-center px-6 hero-bg relative overflow-hidden py-20">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-400/20 rounded-full blur-[120px] pointer-events-none" data-aos="zoom-in" data-aos-duration="1500"></div>
 
