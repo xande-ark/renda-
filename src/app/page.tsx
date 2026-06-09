@@ -56,6 +56,9 @@ export default function Home() {
               <Link href="#como-funciona" className="text-slate-600 hover:text-brand-blue font-semibold transition-colors duration-200">
                 Como Funciona
               </Link>
+              <Link href="/apresentacao" className="text-slate-600 hover:text-brand-blue font-semibold transition-colors duration-200">
+                Pitch
+              </Link>
               <Link href="#contacto" className="text-slate-600 hover:text-brand-blue font-semibold transition-colors duration-200">
                 Contacto
               </Link>
@@ -96,6 +99,9 @@ export default function Home() {
               </Link>
               <Link href="#como-funciona" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 rounded-md text-base font-semibold text-slate-700 hover:text-brand-blue hover:bg-slate-50">
                 Como Funciona
+              </Link>
+              <Link href="/apresentacao" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 rounded-md text-base font-semibold text-slate-700 hover:text-brand-blue hover:bg-slate-50">
+                Pitch
               </Link>
               <Link href="#contacto" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 rounded-md text-base font-semibold text-slate-700 hover:text-brand-blue hover:bg-slate-50">
                 Contacto
