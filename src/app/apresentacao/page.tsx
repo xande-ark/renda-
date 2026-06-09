@@ -10,9 +10,9 @@ export default function PresentationPage() {
   useEffect(() => {
     AOS.init({
       once: false,
-      offset: 50,
-      duration: 800,
-      easing: "ease-out-cubic",
+      offset: 100,
+      duration: 1500,
+      easing: "ease-in-out-sine",
     });
   }, []);
 
@@ -125,7 +125,7 @@ export default function PresentationPage() {
       </div>
 
       {/* Intro Slide */}
-      <section className="h-[100dvh] w-full snap-start snap-always flex flex-col justify-center items-center text-center px-6 relative hero-bg overflow-hidden py-20">
+      <section className="h-[100dvh] w-full snap-start flex flex-col justify-center items-center text-center px-6 relative hero-bg overflow-hidden py-20">
         
         {/* Animated Background Elements */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-400/20 rounded-full blur-[100px] pointer-events-none" data-aos="zoom-in" data-aos-duration="2000"></div>
@@ -152,7 +152,7 @@ export default function PresentationPage() {
 
       {/* Content Slides */}
       {slides.map((slide, index) => (
-        <section key={slide.id} className="h-[100dvh] w-full snap-start snap-always flex flex-col lg:flex-row relative bg-white overflow-hidden">
+        <section key={slide.id} className="h-[100dvh] w-full snap-start flex flex-col lg:flex-row relative bg-white overflow-hidden">
           
           {/* Mobile Overlay Title */}
           <div className="absolute top-0 left-0 w-full pt-16 pb-6 px-6 bg-gradient-to-b from-black/80 via-black/50 to-transparent z-20 lg:hidden pointer-events-none">
@@ -210,7 +210,7 @@ export default function PresentationPage() {
       ))}
 
       {/* CTA Slide */}
-      <section className="h-[100dvh] w-full snap-start snap-always flex flex-col justify-center items-center text-center px-6 hero-bg relative overflow-hidden py-20">
+      <section className="h-[100dvh] w-full snap-start flex flex-col justify-center items-center text-center px-6 hero-bg relative overflow-hidden py-20">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-400/20 rounded-full blur-[120px] pointer-events-none" data-aos="zoom-in" data-aos-duration="1500"></div>
 
