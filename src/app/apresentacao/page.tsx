@@ -1,7 +1,21 @@
+"use client";
+
+import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function PresentationPage() {
+  useEffect(() => {
+    AOS.init({
+      once: false,
+      offset: 50,
+      duration: 800,
+      easing: "ease-out-cubic",
+    });
+  }, []);
+
   const slides = [
     {
       id: "abertura",
@@ -30,7 +44,7 @@ export default function PresentationPage() {
             "Obrigado. O core do Renda+ foi desenhado para mitigar a carga cognitiva e a barreira digital. Nós operamos como um Marketplace Bilateral Sob Demanda. Na nossa plataforma, eliminamos currículos longos e focamos no que importa.
           </p>
           <p className="mb-4">
-            Para o <strong>Demand-Side</strong>, ou seja, o cliente que contrata, a experiência é visual e direta. Ao acessar nossa aplicação, ele se depara com macrocategorias claras: faxina, jardinagem, marido de aluguel. Através de ferramentas de Geofencing, o app calcula a proximidade exata e oferece um 'Clique Único' de solicitação baseado em preço transparente e avaliação.
+            Para o <strong>Demand-Side</strong>, ou seja, o cliente que contrata, a experiência é visual e direta. Ao acessar nossa aplicação, ele se depara com macrocategorias claras: faxina, jardinagem e pequenos reparos. Através de ferramentas de Geofencing, o app calcula a proximidade exata e oferece um 'Clique Único' de solicitação baseado em preço transparente e avaliação.
           </p>
           <p>
             Já para o <strong>Supply-Side</strong>, o prestador de serviço, nosso foco foi a inclusão digital. Sabemos que muitos profissionais têm aparelhos antigos ou dificuldades com textos longos. Por isso, a interface é limpa, permite descrições em áudio e oferece um painel de vagas em tempo real na região dele. Ele aceita o serviço com um toque. Mas para um marketplace funcionar, precisamos entender o mercado, e passo a palavra para nossa diretoria estratégica."
@@ -98,36 +112,39 @@ export default function PresentationPage() {
   ];
 
   return (
-    <div className="h-screen w-full overflow-y-auto snap-y snap-mandatory scroll-smooth bg-slate-900 text-slate-100">
+    <div className="h-[100dvh] w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth bg-slate-900 text-slate-100 relative">
+      
+      {/* Botão Voltar Fixo para garantir que sempre fique visível na área segura */}
+      <div className="fixed top-4 left-4 md:top-8 md:left-8 z-50">
+          <Link href="/" className="inline-flex items-center gap-2 bg-slate-900/40 hover:bg-slate-900/60 backdrop-blur-md text-white px-4 py-2 md:px-5 md:py-2.5 rounded-full text-sm md:text-base font-bold transition-all shadow-lg border border-white/10" data-aos="fade-down" data-aos-delay="200">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Sair
+          </Link>
+      </div>
+
       {/* Intro Slide */}
-      <section className="h-screen w-full snap-start flex flex-col justify-center items-center text-center px-4 relative hero-bg overflow-hidden">
-        <div className="absolute top-6 left-6 md:top-10 md:left-10 z-30">
-            <Link href="/" className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-md text-white px-5 py-2.5 rounded-full font-bold transition-all shadow-lg border border-white/10">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
-              Voltar à Home
-            </Link>
-        </div>
+      <section className="h-[100dvh] w-full snap-start snap-always flex flex-col justify-center items-center text-center px-6 relative hero-bg overflow-hidden py-20">
         
         {/* Animated Background Elements */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-400/20 rounded-full blur-[100px] pointer-events-none"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-yellow-400/20 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-400/20 rounded-full blur-[100px] pointer-events-none" data-aos="zoom-in" data-aos-duration="2000"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-yellow-400/20 rounded-full blur-[100px] pointer-events-none" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300"></div>
 
-        <div className="relative z-20 max-w-5xl mx-auto">
-          <div className="inline-block px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 text-sm md:text-base font-bold tracking-widest text-yellow-300 uppercase shadow-xl">
+        <div className="relative z-20 max-w-5xl mx-auto flex flex-col items-center justify-center">
+          <div data-aos="fade-up" className="inline-block px-6 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 text-xs md:text-sm font-bold tracking-widest text-yellow-300 uppercase shadow-xl">
             Apresentação Executiva
           </div>
-          <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tight text-white drop-shadow-2xl">
+          <h1 data-aos="fade-up" data-aos-delay="100" className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tight text-white drop-shadow-2xl">
             Pitch <span className="text-yellow-400">Renda+</span>
           </h1>
-          <p className="text-2xl md:text-3xl opacity-90 font-medium text-blue-50 max-w-3xl mx-auto leading-relaxed">
+          <p data-aos="fade-up" data-aos-delay="200" className="text-xl md:text-3xl opacity-90 font-medium text-blue-50 max-w-3xl mx-auto leading-relaxed">
             Conheça a plataforma que está revolucionando o futuro do trabalho autônomo local.
           </p>
-          <div className="mt-16 animate-bounce opacity-80 flex flex-col items-center">
-            <p className="mb-3 font-semibold uppercase tracking-widest text-sm text-yellow-300">Deslize para ver</p>
-            <div className="w-10 h-14 border-2 border-white/50 rounded-full flex justify-center p-2">
-              <div className="w-1 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
+          <div data-aos="fade-up" data-aos-delay="600" className="mt-16 animate-bounce opacity-80 flex flex-col items-center">
+            <p className="mb-3 font-semibold uppercase tracking-widest text-xs md:text-sm text-yellow-300">Deslize para iniciar</p>
+            <div className="w-8 h-12 md:w-10 md:h-14 border-2 border-white/50 rounded-full flex justify-center p-2">
+              <div className="w-1 h-2 md:h-3 bg-yellow-400 rounded-full animate-pulse"></div>
             </div>
           </div>
         </div>
@@ -135,52 +152,57 @@ export default function PresentationPage() {
 
       {/* Content Slides */}
       {slides.map((slide, index) => (
-        <section key={slide.id} className="h-screen w-full snap-start flex flex-col lg:flex-row relative bg-white overflow-hidden group">
+        <section key={slide.id} className="h-[100dvh] w-full snap-start snap-always flex flex-col lg:flex-row relative bg-white overflow-hidden">
+          
           {/* Mobile Overlay Title */}
-          <div className="absolute top-0 left-0 w-full p-6 bg-gradient-to-b from-black/80 to-transparent z-20 lg:hidden pointer-events-none">
-            <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold mb-2 inline-block">SLIDE {index + 1}</span>
-            <h2 className="text-2xl font-bold text-white drop-shadow-md">{slide.title}</h2>
+          <div className="absolute top-0 left-0 w-full pt-16 pb-6 px-6 bg-gradient-to-b from-black/80 via-black/50 to-transparent z-20 lg:hidden pointer-events-none">
+            <div data-aos="fade-down">
+              <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-[10px] font-bold mb-2 inline-block uppercase tracking-wider">Tópico {index + 1}</span>
+              <h2 className="text-xl font-bold text-white drop-shadow-md leading-tight">{slide.title}</h2>
+            </div>
           </div>
 
           {/* Image Side */}
-          <div className="w-full h-[45vh] lg:h-screen lg:w-1/2 relative bg-slate-100">
+          <div className="w-full h-[40dvh] lg:h-[100dvh] lg:w-1/2 relative bg-slate-100 flex-shrink-0">
              <Image 
                 src={slide.image} 
                 alt={slide.title}
                 fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                className="object-cover"
                 priority={index === 0}
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                data-aos="fade-right"
+                data-aos-duration="1000"
               />
           </div>
           
           {/* Content Side */}
-          <div className="w-full h-[55vh] lg:h-screen lg:w-1/2 flex flex-col justify-center p-6 md:p-12 lg:p-24 overflow-y-auto bg-slate-50 relative">
+          <div className="w-full h-[60dvh] lg:h-[100dvh] lg:w-1/2 flex flex-col p-6 pb-20 md:p-12 lg:p-24 overflow-y-auto bg-slate-50 relative">
               
-              <div className="hidden lg:block mb-10 transform transition-all duration-700 translate-y-0 opacity-100">
-                  <span className="bg-blue-100 text-blue-800 px-5 py-2 rounded-full text-sm font-black tracking-widest uppercase shadow-sm">
+              <div className="hidden lg:block mb-8 xl:mb-10" data-aos="fade-left" data-aos-delay="100">
+                  <span className="bg-blue-100 text-blue-800 px-5 py-2 rounded-full text-xs xl:text-sm font-black tracking-widest uppercase shadow-sm">
                     Tópico {index + 1}
                   </span>
-                  <h2 className="text-4xl lg:text-5xl font-black mt-6 text-slate-800 leading-tight">
+                  <h2 className="text-3xl lg:text-4xl xl:text-5xl font-black mt-6 text-slate-800 leading-tight">
                     {slide.title}
                   </h2>
               </div>
               
-              <div className="flex items-center gap-4 text-blue-700 font-bold text-lg md:text-xl mb-8 border-b border-blue-100 pb-6">
-                <span className="bg-blue-600 text-white p-2.5 rounded-full shadow-md">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div data-aos="fade-left" data-aos-delay="200" className="flex items-center gap-3 xl:gap-4 text-blue-700 font-bold text-base md:text-lg xl:text-xl mb-6 xl:mb-8 border-b border-blue-100 pb-4 xl:pb-6">
+                <span className="bg-blue-600 text-white p-2 xl:p-2.5 rounded-full shadow-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 xl:h-6 xl:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                   </svg>
                 </span>
                 {slide.speaker}
               </div>
               
-              <div className="prose prose-lg md:prose-xl text-slate-600 leading-relaxed italic border-l-4 border-blue-500 pl-6 md:pl-8 bg-white/50 p-6 rounded-r-2xl shadow-sm">
+              <div data-aos="fade-up" data-aos-delay="300" className="prose prose-base lg:prose-lg xl:prose-xl text-slate-600 leading-relaxed italic border-l-4 border-blue-500 pl-4 md:pl-6 xl:pl-8 bg-white/50 p-4 xl:p-6 rounded-r-2xl shadow-sm overflow-visible">
                 {slide.content}
               </div>
 
               {/* Progress Indicator */}
-              <div className="absolute bottom-6 right-8 text-slate-300 font-bold text-xl">
+              <div className="absolute bottom-4 right-6 lg:bottom-8 lg:right-8 text-slate-300 font-bold text-lg lg:text-xl pointer-events-none">
                 {index + 1} / {slides.length}
               </div>
           </div>
@@ -188,28 +210,30 @@ export default function PresentationPage() {
       ))}
 
       {/* CTA Slide */}
-      <section className="h-screen w-full snap-start flex flex-col justify-center items-center text-center px-4 hero-bg relative overflow-hidden">
+      <section className="h-[100dvh] w-full snap-start snap-always flex flex-col justify-center items-center text-center px-6 hero-bg relative overflow-hidden py-20">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-400/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-400/20 rounded-full blur-[120px] pointer-events-none" data-aos="zoom-in" data-aos-duration="1500"></div>
 
-        <div className="max-w-4xl mx-auto z-10 flex flex-col items-center">
-            <div className="w-24 h-24 bg-white rounded-3xl shadow-2xl flex items-center justify-center mb-10 transform rotate-12 hover:rotate-0 transition-all duration-500">
-               <span className="font-black text-blue-600 text-4xl tracking-tighter mr-0.5">
+        <div className="max-w-4xl mx-auto z-10 flex flex-col items-center justify-center h-full">
+            <div data-aos="flip-up" className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-3xl shadow-2xl flex items-center justify-center mb-8 md:mb-10 transform rotate-12 hover:rotate-0 transition-all duration-500">
+               <span className="font-black text-blue-600 text-3xl md:text-4xl tracking-tighter mr-0.5">
                   R<span className="text-yellow-400">+</span>
                 </span>
             </div>
-            <h3 className="text-5xl md:text-7xl font-black mb-8 text-white drop-shadow-xl leading-tight">
+            <h3 data-aos="fade-up" data-aos-delay="100" className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 md:mb-8 text-white drop-shadow-xl leading-tight">
               Pronto para transformar sua rotina?
             </h3>
-            <p className="text-2xl text-blue-100 mb-12 max-w-2xl font-medium">
+            <p data-aos="fade-up" data-aos-delay="200" className="text-xl md:text-2xl text-blue-100 mb-10 md:mb-12 max-w-2xl font-medium px-4">
               Junte-se ao ecossistema de contratação instantânea mais seguro do mercado.
             </p>
-            <Link href="/register" className="inline-block bg-yellow-400 hover:bg-yellow-300 text-slate-900 px-12 py-6 rounded-full font-black text-2xl transition-all shadow-[0_0_40px_rgba(250,204,21,0.4)] hover:scale-105 hover:shadow-[0_0_60px_rgba(250,204,21,0.6)]">
-              Comece a usar agora
-            </Link>
-            <div className="mt-16">
-                <Link href="/" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors font-semibold">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <div data-aos="zoom-in" data-aos-delay="300">
+              <Link href="/register" className="inline-block bg-yellow-400 hover:bg-yellow-300 text-slate-900 px-8 py-4 md:px-12 md:py-6 rounded-full font-black text-xl md:text-2xl transition-all shadow-[0_0_30px_rgba(250,204,21,0.4)] hover:scale-105 hover:shadow-[0_0_50px_rgba(250,204,21,0.6)]">
+                Comece a usar agora
+              </Link>
+            </div>
+            <div className="mt-12 md:mt-16" data-aos="fade-up" data-aos-delay="400">
+                <Link href="/" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors font-semibold text-sm md:text-base">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
                   </svg>
                   Voltar para a página inicial
